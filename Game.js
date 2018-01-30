@@ -19,19 +19,27 @@ class Game {
 	}
 
 	_battle() {
-		this.player1.playCard()
-		this.player2.playCard()
+		let contender1 = this.player1.playCard()
+		let contender2 = this.player2.playCard()
 		const result = this._compare(this.player1.battleCard, this.player2.battleCard)
 		if (result < 0) {
+			console.log('P1 WINS')
 			this.player1.winBattle(this.player2.battleCard, this.pot.cards)
 			this.pot.reset()
 		} else if (result > 0) {
+			console.log('P2 WINS')
 			this.player2.winBattle(this.player1.battleCard, this.pot.cards)
 			this.pot.reset()
 		} else {
+			console.log('TIE')
 			this.player1.tie(this.pot)
 			this.player2.tie(this.pot)
 		}
+		console.log('    p1:', this.player1.cards.length)
+		console.log('    p2:', this.player2.cards.length)
+		console.log('   pot:', this.pot.cards.length)
+		console.log('   SUM:', this.player1.cards.length + this.player2.cards.length + this.pot.cards.length)
+		console.log('')
 	}
 
 	_getWinner() {
@@ -51,12 +59,10 @@ class Game {
 			while (this.rounds !== 0) {
 				this._battle()
 				this.rounds -= 1
-				console.log('Number of Cards: ', this.pot.cards.length + this.player1.cards.length + this.player2.cards.length)
 			}
 		} else {
 			while (this.player1.cards.length && this.player2.cards.length) {
 				this._battle()
-				console.log('Number of Cards: ', this.pot.cards.length + this.player1.cards.length + this.player2.cards.length)
 			}
 		}
 		return this._getWinner()

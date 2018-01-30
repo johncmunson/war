@@ -14,6 +14,7 @@ class Player {
 	}
 
 	winBattle(battleCard, potCards) {
+		this.cards.push(this.battleCard)
 		this.cards.push(battleCard)
 		if (potCards.length) {
 			for (let card of potCards) {
