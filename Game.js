@@ -4,12 +4,13 @@ const Player = require('./Player.js')
 const Pot = require('./Pot.js')
 
 class Game {
-	constructor(player1, player2, numberRounds) {
+	constructor(player1, player2, rounds) {
 		this.player1 = new Player(player1)
 		this.player2 = new Player(player2)
-		this.rounds = numberRounds
+		this.rounds = rounds
 		this.deck = new Deck()
 		this.pot = new Pot()
+		this.roundNumber = 0
 	}
 
 	_compare(card1, card2) {
@@ -23,15 +24,15 @@ class Game {
 		let contender2 = this.player2.playCard()
 		const result = this._compare(this.player1.battleCard, this.player2.battleCard)
 		if (result < 0) {
-			console.log('P1 WINS')
+			console.log(`Round ${this.roundNumber}: P1 Wins!`)
 			this.player1.winBattle(this.player2.battleCard, this.pot.cards)
 			this.pot.reset()
 		} else if (result > 0) {
-			console.log('P2 WINS')
+			console.log(`Round ${this.roundNumber}: P2 Wins!`)
 			this.player2.winBattle(this.player1.battleCard, this.pot.cards)
 			this.pot.reset()
 		} else {
-			console.log('TIE')
+			console.log(`Round ${this.roundNumber}: Tie!`)
 			this.player1.tie(this.pot)
 			this.player2.tie(this.pot)
 		}
@@ -56,12 +57,14 @@ class Game {
 		this.deck.shuffle()
 		this.deck.deal([this.player1, this.player2])
 		if (this.rounds) {
-			while (this.rounds !== 0) {
+			while (this.rounds !== 0 || (this.player1.cards.length && this.player2.cards.length)) {
+				this.roundNumber++
 				this._battle()
 				this.rounds -= 1
 			}
 		} else {
 			while (this.player1.cards.length && this.player2.cards.length) {
+				this.roundNumber++
 				this._battle()
 			}
 		}

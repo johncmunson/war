@@ -13,9 +13,16 @@ Javascript ES6 and object oriented programming.
 - Ability to configure the game with command line flags
 - Better round summaries in the console output
 - Maybe add ASCII art
+- Add a separate branch for "classic javascript"
+- This branch only demonstrates composition,
+  so I could add a branch that also demonstrates inheritance
 - Unit tests
 - Have someone else review if there is anything that could be more "OOP"
 - Bonus: server, database, frontend
+	- Websockets, JSON RPC, JSON Schema
+	- Gambling or advertisements
+	- Play vs others or the computer
+	- Create a core game/rules engine, that could power other types of card games
 
 ###### Inspiration:
 [Java Game of War](http://homepage.divms.uiowa.edu/~slonnegr/oosd/22OOD.pdf)
