@@ -10,6 +10,7 @@ Javascript ES6 and object oriented programming.
 
 ###### To-Do:
 - Add more command line interactivity
+- Create an npm package
 - Ability to configure the game with command line flags
 - Better round summaries in the console output
 - Maybe add ASCII art

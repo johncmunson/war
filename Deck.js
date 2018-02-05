@@ -2,14 +2,84 @@ const Card = require('./Card.js')
 
 class Deck {
 	constructor() {
-		const suits = [1, 2, 3, 4]
-		const ranks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+		const suits = [
+			{
+				name: 'Diamond',
+				glyph: '<>'
+			},
+			{
+				name: 'Heart',
+				glyph: '<3'
+			},
+			{
+				name: 'Spade',
+				glyph: '{>'
+			},
+			{
+				name: 'Club',
+				glyph: '-%'
+			}
+		]
+		const ranks = [
+			{
+				name: 'A',
+				value: 1
+			},
+			{
+				name: '2',
+				value: 2
+			},
+			{
+				name: '3',
+				value: 3
+			},
+			{
+				name: '4',
+				value: 4
+			},
+			{
+				name: '5',
+				value: 5
+			},
+			{
+				name: '6',
+				value: 6
+			},
+			{
+				name: '7',
+				value: 7
+			},
+			{
+				name: '8',
+				value: 8
+			},
+			{
+				name: '9',
+				value: 9
+			},
+			{
+				name: '10',
+				value: 10
+			},
+			{
+				name: 'J',
+				value: 11
+			},
+			{
+				name: 'Q',
+				value: 12
+			},
+			{
+				name: 'K',
+				value: 13
+			}
+		]
 		this.cards = ranks.map(
 			rank => suits.map(
 				suit => new Card(rank, suit)
 			)
 		).reduce(
-			(cum, cur) => cum.concat(cur),
+			(accum, cur) => accum.concat(cur),
 			[]
 		)
 	}
