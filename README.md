@@ -1,3 +1,6 @@
+![screen 1](screenshots/round11.png?raw=true "Round 11")
+![screen 2](screenshots/round12.png?raw=true "Round 12")
+
 ### Javascript Game of War
 
 This is a simple command line game I created to strengthen my knowledge of
