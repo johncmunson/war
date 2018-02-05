@@ -23,7 +23,7 @@ Javascript ES6 and object oriented programming.
 - Unit tests
 - Have someone else review if there is anything that could be more "OOP"
 - Bonus: server, database, frontend
-	- Websockets, JSON RPC, JSON Schema
+	- Websockets or WebRTC, JSON RPC, JSON Schema
 	- Gambling or advertisements
 	- Play vs others or the computer
 	- Create a core game/rules engine, that could power other types of card games
