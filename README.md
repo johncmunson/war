@@ -11,6 +11,7 @@ Check the language specific repos for instructions on running the game in the la
 
 ###### To-Do / Ideas:
 
+- Add a CONTRIBUTING.md, as this would be an easy project for people new to open source software to begin making contributions
 - Implement a solution in languages other than Javascript (Ruby, Python, Java, PHP, Coffeescript, Clojurescript, etc.)
 - Implement a solution in "classic javascript"
 - This current javascript solution only demonstrates composition, so I could add a branch that also demonstrates inheritance
@@ -21,7 +22,7 @@ Check the language specific repos for instructions on running the game in the la
 - Create an npm package, or a ruby gem
 - Better round summaries in the console output
 - Maybe add ASCII art
-- Unit tests
+- Add a testing suite
 - Have someone else review if there is anything that could be more "OOP"
 - Bonus: server, database, frontend
 	- Websockets, JSON RPC, JSON Schema
